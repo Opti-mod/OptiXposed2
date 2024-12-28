@@ -41,8 +41,8 @@ class Main : IXposedHookLoadPackage {
 
     fun buildLoaderJsonString(): String {
         val obj = buildJsonObject {
-            put("loaderName", "BunnyXposed")
-            put("loaderVersion", BuildConfig.VERSION_NAME)
+            put("loaderName", "OptiXposed")
+            put("loaderVersion", "2.0.0")
 
             for (module in pyonModules) {
                 module.buildJson(this)
