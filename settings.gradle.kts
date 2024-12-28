@@ -1,2 +1,2 @@
-rootProject.name = "BunnyXposed"
+rootProject.name = "OptiXposed"
 include(":app")
