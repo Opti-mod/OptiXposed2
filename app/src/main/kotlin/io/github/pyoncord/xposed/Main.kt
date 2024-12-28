@@ -136,9 +136,9 @@ class Main : IXposedHookLoadPackage {
 
                 val url = 
                     if (config.customLoadUrl.enabled) config.customLoadUrl.url 
-                    else "https://raw.githubusercontent.com/pyoncord/detta-builds/main/bunny.min.js"
+                    else "https://raw.githubusercontent.com/opti-mod/builds/main/opti.js"
 
-                Log.e("Bunny", "Fetching JS bundle from $url")
+                Log.e("Opti", "Fetching JS bundle from $url")
                 
                 val response: HttpResponse = client.get(url) {
                     headers { 
@@ -160,7 +160,7 @@ class Main : IXposedHookLoadPackage {
                 return@async
             } catch (e: RedirectResponseException) {
                 if (e.response.status != HttpStatusCode.NotModified) throw e;
-                Log.e("Bunny", "Server responded with status code 304 - no changes to file")
+                Log.e("Opti", "Server responded with status code 304 - no changes to file")
             } catch (e: Throwable) {
                 onActivityCreate { activity ->
                     activity.runOnUiThread {
@@ -172,7 +172,7 @@ class Main : IXposedHookLoadPackage {
                     }
                 }
 
-                Log.e("Bunny", "Failed to download bundle", e)
+                Log.e("Opti", "Failed to download bundle", e)
             }
         }
 
